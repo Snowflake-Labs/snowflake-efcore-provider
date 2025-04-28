@@ -1,0 +1,75 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Snowflake provider for Entity Framework Core.</Description>
+    <TargetFrameworks>net8.0</TargetFrameworks>
+    <MinClientVersion>3.6</MinClientVersion>
+    <AssemblyName>Snowflake.EntityFrameworkCore</AssemblyName>
+    <RootNamespace>Snowflake.EntityFrameworkCore</RootNamespace>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PackageTags>Snowflake EFCore</PackageTags>
+    <Version>0.1.1</Version>
+    <Copyright>Copyright (c) 2023-2024 Snowflake Computing Inc. All rights reserved.</Copyright>
+    <Company>Snowflake Computing, Inc</Company>
+    <Product>Entity Framework Provider for Snowflake</Product>
+    <AssemblyVersion>0.1.1</AssemblyVersion>
+    <Title>Snowflake.EntityFrameworkCore</Title>
+    <Authors />
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DocumentationFile />
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Shared\*.cs" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.8" />
+    <PackageReference Include="Snowflake.Data" Version="4.3.0" />
+    <PackageReference Include="log4net" Version="[2.0.15,)" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Update="app.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Properties\SnowflakeStrings.Designer.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Snowflake.EntityFrameworkCore.FunctionalTests" />
+  </ItemGroup>
+  <!--
+  
+    <ItemGroup>
+      <None Update="Properties\SnowflakeStrings.Designer.tt">
+        <Generator>TextTemplatingFileGenerator</Generator>
+        <LastGenOutput>SnowflakeStrings.Designer.cs</LastGenOutput>
+      </None>
+    </ItemGroup>
+  
+    <ItemGroup>
+      <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+    </ItemGroup>
+  
+    <ItemGroup>
+      <Compile Update="Properties\SnowflakeStrings.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>SnowflakeStrings.Designer.tt</DependentUpon>
+      </Compile>
+    </ItemGroup>
+  
+    <ItemGroup>
+      <EmbeddedResource Update="Properties\SnowflakeStrings.resx">
+        <CustomToolNamespace>Snowflake.EntityFrameworkCore.Internal</CustomToolNamespace>
+      </EmbeddedResource>
+    </ItemGroup>
+  -->
+  </Project>

@@ -1,0 +1,5 @@
+<#
+    Session["ResourceFile"] = "SnowflakeStrings.resx";
+    Session["LoggingDefinitionsClass"] = "Diagnostics.Internal.SnowflakeLoggingDefinitions";
+#>
+<#@ include file="..\..\tools\Resources.tt" #>
